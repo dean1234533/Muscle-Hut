@@ -87,9 +87,13 @@
     @media (max-width: 900px) {
       .slide-over-inner,
       .slide-over-inner.reverse { grid-template-columns: 1fr; direction: ltr; }
-      .slide-img-panel { clip-path: none !important; height: 320px; }
-      .slide-text-panel { padding: 52px 28px; }
+      .slide-img-panel { clip-path: none !important; height: 280px; }
+      .slide-text-panel { padding: 44px 24px; }
       .mission-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .slide-img-panel  { height: 220px; }
+      .slide-text-panel { padding: 36px 16px; }
     }
   </style>
 </head>
@@ -122,7 +126,7 @@
   </nav>
 
   <!-- PAGE HERO -->
-  <div class="page-hero" style="background:linear-gradient(to bottom, var(--dark) 0%, #1a1a1a 100%);">
+  <div class="page-hero hero-about">
     <div class="container">
       <span class="page-hero-eyebrow">About Us</span>
       <h1>More Than a Gym.<br /><span class="text-red">A Community.</span></h1>
@@ -141,7 +145,7 @@
         <h2>Built on <span class="text-red">Passion</span></h2>
         <p>Muscle Hut was founded over 10 years ago with one simple idea: create a gym where everyone feels welcome, supported, and challenged. Not a faceless chain. Not intimidating. Just a proper gym with real people who care.</p>
         <p>From a single gym floor in Leytonstone, we've grown into one of East London's most trusted fitness communities — with over 300 active members and a team of expert coaches who live and breathe fitness.</p>
-        <p>We cater for everyone: from complete beginners finding their feet, to competitive athletes pushing their limits.</p>
+        <p>From complete beginners finding their feet, to competitive athletes pushing their limits — there is a place here for you.</p>
       </div>
     </div>
   </section>
@@ -175,7 +179,7 @@
   <section class="slide-over-section" id="facilities">
     <div class="slide-over-inner reverse">
       <div class="slide-img-panel">
-        <div class="slide-img-bg" style="background-image:url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=900&q=80');"></div>
+        <div class="slide-img-bg" style="background-image:url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=900&q=80');"></div>
       </div>
       <div class="slide-text-panel">
         <span class="section-eyebrow">OUR FACILITIES</span>
@@ -287,7 +291,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="logo"><span class="logo-muscle">MUSCLE</span><span class="logo-hut">HUT</span></a>
-          <p>Leytonstone's community gym — where every goal is achievable and every member matters.</p>
+          <p>East London's independent gym, built on hard work, real results, and a genuine community.</p>
           <div class="social-links" style="margin-top:20px;">
             <a href="https://www.facebook.com/p/Muscle-Hut-Gym-Leytonstone-100083789829434/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
             <a href="https://www.instagram.com/musclehutleytonstone/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>

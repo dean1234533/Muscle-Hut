@@ -22,7 +22,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   background: var(--dark);
@@ -65,13 +65,51 @@ p { color: var(--grey-light); line-height: 1.75; }
   position: relative;
   overflow: hidden;
 }
+/* Red top accent bar */
 .page-hero::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
   background: var(--red);
+  z-index: 2;
 }
+/* Dark overlay on top of background image */
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0,0,0,0.82) 0%,
+    rgba(0,0,0,0.60) 60%,
+    rgba(0,0,0,0.45) 100%
+  );
+  z-index: 1;
+}
+/* Ensure text sits above the overlay */
+.page-hero .container { position: relative; z-index: 2; }
+
+/* Per-page hero background images — all Unsplash (free commercial licence, unsplash.com/license) */
+.hero-about {
+  background: url('https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=1600&q=80') center/cover no-repeat;
+}
+.hero-membership {
+  background: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1600&q=80') center 30%/cover no-repeat;
+}
+.hero-training {
+  background: url('https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=1600&q=80') center/cover no-repeat;
+}
+.hero-faqs {
+  background: url('https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1600&q=80') center/cover no-repeat;
+}
+.hero-contact {
+  background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1600&q=80') center/cover no-repeat;
+}
+.hero-legal {
+  background: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1600&q=80') center/cover no-repeat;
+}
+
 .page-hero-eyebrow {
   display: inline-block;
   font-family: var(--font-heading);
@@ -391,10 +429,14 @@ textarea { resize: vertical; min-height: 130px; }
   background: rgba(10,10,10,0.97);
   border-top: 1px solid rgba(255,255,255,0.09);
   box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
-  transition: transform 0.25s ease;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
 }
 .sticky-cta--hidden {
   transform: translateY(100%);
+}
+.sticky-cta:not(.sticky-cta--hidden) {
+  transform: translateY(0);
 }
 
 /* ============================================
@@ -405,9 +447,11 @@ textarea { resize: vertical; min-height: 130px; }
 #home-hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   overflow: hidden;
+  width: 100%;
 }
 .home-hero-bg {
   position: absolute;
@@ -431,6 +475,7 @@ textarea { resize: vertical; min-height: 130px; }
   z-index: 2;
   padding: 140px 28px 100px;
   max-width: 680px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -682,7 +727,8 @@ textarea { resize: vertical; min-height: 130px; }
 .home-training { background: var(--dark); }
 .home-training h2 { color: var(--white); text-align: center; margin-bottom: 10px; }
 .home-training .section-sub { text-align: center; }
-.training-preview {
+.training-preview,
+.training-preview-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
@@ -1144,6 +1190,7 @@ textarea { resize: vertical; min-height: 130px; }
   .plan-featured        { transform: none; }
   .plan-featured:hover  { transform: translateY(-6px); box-shadow: 0 20px 56px rgba(227,27,35,0.18), 0 0 0 1px var(--red); }
   .training-preview,
+  .training-preview-grid,
   .training-grid        { grid-template-columns: 1fr 1fr; }
   .testimonials-grid    { grid-template-columns: repeat(3, 1fr); }
   .team-grid            { grid-template-columns: 1fr 1fr; }
@@ -1162,7 +1209,8 @@ textarea { resize: vertical; min-height: 130px; }
   h2 { font-size: 1.9rem; }
   section { padding: 68px 0; }
 
-  .home-hero-content { padding: 110px 28px 80px; }
+  .home-hero-content { padding: 96px 20px 72px; }
+  #home-hero { align-items: flex-start; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; }
 
@@ -1170,6 +1218,7 @@ textarea { resize: vertical; min-height: 130px; }
   .values-grid        { grid-template-columns: 1fr 1fr; }
   .perks-grid         { grid-template-columns: 1fr 1fr; }
   .training-preview,
+  .training-preview-grid,
   .training-grid      { grid-template-columns: 1fr; }
   .testimonials-grid {
     display: flex;

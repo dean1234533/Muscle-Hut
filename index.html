@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muscle Hut Gym | Leytonstone's Premier Gym</title>
-  <meta name="description" content="Join Muscle Hut Gym in Leytonstone. World class personal training, nutrition store, men's & women's facilities. Open 7 days a week. Book your FREE trial today." />
+  <meta name="description" content="Join Muscle Hut Gym in Leytonstone. Expert personal trainers, nutrition store, separate men's & women's facilities. Open 7 days a week. Book your FREE trial today." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -70,6 +70,16 @@
     .slide-text-panel h2 { color: var(--dark); margin-bottom: 18px; }
     .slide-text-panel p  { color: #555; margin-bottom: 16px; }
     .slide-text-panel .check-list li { color: #444; }
+
+    @media (max-width: 900px) {
+      .slide-over-inner { grid-template-columns: 1fr; min-height: auto; }
+      .slide-img-panel  { clip-path: none !important; height: 280px; }
+      .slide-text-panel { padding: 44px 24px; }
+    }
+    @media (max-width: 480px) {
+      .slide-img-panel  { height: 220px; }
+      .slide-text-panel { padding: 36px 16px; }
+    }
 
     /* Membership preview on home — dark background styles in style.css */
 
@@ -189,7 +199,7 @@
         <p>Our owners and expert coaches are on the floor every day, ready to guide you through every lift, every session, every milestone.</p>
         <ul class="check-list">
           <li>Men's &amp; Women's separate facilities</li>
-          <li>World class personal trainers on-site</li>
+          <li>Accredited personal trainers on-site</li>
           <li>Nutrition store &amp; protein bar</li>
           <li>State-of-the-art equipment</li>
           <li>Supportive, no-judgement atmosphere</li>
@@ -292,9 +302,9 @@
   <section class="home-training">
     <div class="container">
       <span class="section-eyebrow" style="display:block;text-align:center;">FREE TRAINING PLANS</span>
-      <h2 class="text-center">Not Sure Where <span class="text-red">to Start?</span></h2>
+      <h2 class="text-center">Know Your Goal. <span class="text-red">Get Your Plan.</span></h2>
       <p class="section-sub text-center">Our coaches built FREE plans for every goal. Download yours and walk in ready.</p>
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;">
+      <div class="training-preview-grid">
         <div class="training-card-preview fade-up">
           <div class="training-tag">BEGINNERS</div>
           <h3>Foundation Builder</h3>
@@ -360,7 +370,7 @@
           </div>
           <div class="testimonial-card fade-up">
             <div class="stars">★★★★★</div>
-            <p>"I went from never lifting to competing in a bodybuilding show in 18 months. The coaches here are world class."</p>
+            <p>"I went from never lifting to competing in a bodybuilding show in 18 months. The coaching here is on a different level."</p>
             <div class="testimonial-author">
               <div class="author-avatar">JB</div>
               <div><strong>James B.</strong><span>Member since 2020</span></div>
@@ -398,7 +408,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="logo"><span class="logo-muscle">MUSCLE</span><span class="logo-hut">HUT</span></a>
-          <p>Leytonstone's community gym — where every goal is achievable and every member matters.</p>
+          <p>East London's independent gym, built on hard work, real results, and a genuine community.</p>
           <div class="social-links" style="margin-top:20px;">
             <a href="https://www.facebook.com/p/Muscle-Hut-Gym-Leytonstone-100083789829434/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
             <a href="https://www.instagram.com/musclehutleytonstone/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
