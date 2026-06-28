@@ -117,17 +117,18 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 })();
 
-// ---- STICKY CTA: show only after scrolling past hero, hide near footer ----
+// ---- STICKY CTA: fade in after hero, fade out near footer ----
 const stickyCta = document.querySelector('.sticky-cta');
 if (stickyCta) {
   let heroGone = false;
   let footerVisible = false;
 
   function updateStickyCta() {
-    stickyCta.classList.toggle('sticky-cta--hidden', !heroGone || footerVisible);
+    const shouldShow = heroGone && !footerVisible;
+    stickyCta.classList.toggle('sticky-cta--visible', shouldShow);
   }
 
-  // Watch the hero (or page top) — hide bar while it's in view
+  // Hide while the hero / page-hero is still on screen
   const heroEl = document.getElementById('home-hero') || document.querySelector('.page-hero');
   if (heroEl) {
     new IntersectionObserver(([e]) => {
@@ -135,14 +136,15 @@ if (stickyCta) {
       updateStickyCta();
     }, { threshold: 0 }).observe(heroEl);
   } else {
-    // Non-hero pages: show after 200px scroll
     window.addEventListener('scroll', () => {
       heroGone = window.scrollY > 200;
       updateStickyCta();
     }, { passive: true });
+    heroGone = window.scrollY > 200;
+    updateStickyCta();
   }
 
-  // Also hide when footer is in view (avoids double CTA at bottom)
+  // Also hide when footer scrolls into view
   const siteFooter = document.querySelector('.site-footer');
   if (siteFooter) {
     new IntersectionObserver(([e]) => {
