@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Training Plans | Muscle Hut Gym Leytonstone</title>
+  <meta name="description" content="Free training plans for beginners, fat loss and muscle gain from Muscle Hut Gym. Download your plan and start training today in Leytonstone." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Diagonal slide-over for training page */
+    .slide-over-section {
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-over-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+      align-items: stretch;
+    }
+    .slide-img-panel {
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 88% 100%, 0 100%);
+    }
+    .slide-img-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.08);
+      transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .slide-img-panel::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.15) 0%, transparent 80%);
+      z-index: 1;
+    }
+    .slide-over-section.in-view .slide-img-bg { transform: scale(1); }
+    .slide-text-panel {
+      padding: 72px 56px 72px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .slide-text-panel h2 { color: var(--white); margin-bottom: 18px; }
+    .slide-text-panel p  { color: var(--grey-light); margin-bottom: 16px; }
+    @media (max-width: 900px) {
+      .slide-over-inner { grid-template-columns: 1fr; }
+      .slide-img-panel { clip-path: none !important; height: 300px; }
+      .slide-text-panel { padding: 48px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="logo"><span class="logo-muscle">MUSCLE</span><span class="logo-hut">HUT</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="training-plans.html" class="active">Training Plans</a></li>
+        <li><a href="faqs.html">FAQs</a></li>
+        <li><a href="contact.html">Contact us</a></li>
+      </ul>
+      <a href="contact.html" class="btn btn-red nav-cta">Free Trial</a>
+      <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="membership.html">Membership</a><a href="training-plans.html">Training Plans</a><a href="faqs.html">FAQs</a><a href="contact.html">Contact us</a>
+      <a href="contact.html" class="btn btn-red">Book Free Trial</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <span class="page-hero-eyebrow">Training Plans</span>
+      <h1>FREE Plans.<br /><span class="text-red">Real Results.</span></h1>
+      <p>Our coaches have built these plans based on the programmes that work for our members every day. Download yours, walk in, and start training with purpose.</p>
+    </div>
+  </div>
+
+  <!-- INTRO SLIDE-OVER -->
+  <section class="slide-over-section" style="background:var(--dark);" id="intro">
+    <div class="slide-over-inner">
+      <div class="slide-img-panel">
+        <div class="slide-img-bg" style="background-image:url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=900&q=80');"></div>
+      </div>
+      <div class="slide-text-panel">
+        <span class="section-eyebrow">WHY TRAIN WITH A PLAN?</span>
+        <h2>Stop Guessing. <span class="text-red">Start Progressing.</span></h2>
+        <p>Walking into the gym without a plan is the fastest way to spin your wheels. These plans give you structure, progression, and a clear path to your goal.</p>
+        <p>Each plan has been built by our certified coaches and tested by our members. They're not generic internet programmes — they're the same frameworks we use with our personal training clients.</p>
+        <ul class="check-list" style="--check-color:var(--red);">
+          <li style="color:var(--grey-light);">Progressive overload built-in</li>
+          <li style="color:var(--grey-light);">Adaptable to your schedule</li>
+          <li style="color:var(--grey-light);">Nutrition guidance included</li>
+          <li style="color:var(--grey-light);">Form tips & video links</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINING PLANS CARDS -->
+  <section class="training-cards-section">
+    <div class="container">
+      <span class="section-eyebrow" style="display:block;text-align:center;">DOWNLOAD FREE</span>
+      <h2 class="text-white text-center">Choose <span class="text-red">Your Goal</span></h2>
+      <p class="section-sub text-center">Select the plan that matches your goal. All plans are completely free — just fill out the form to download.</p>
+      <div class="training-grid">
+        <div class="training-card fade-up">
+          <div class="training-tag">BEGINNERS</div>
+          <h3>Foundation Builder</h3>
+          <p>The perfect starting point. Learn correct form, build confidence, and establish the habits that will carry you for years.</p>
+          <ul>
+            <li>3 sessions per week</li>
+            <li>Full body workouts</li>
+            <li>4-week progressive plan</li>
+            <li>Form video guides</li>
+            <li>Beginner nutrition tips</li>
+          </ul>
+          <a href="contact.html?plan=foundation" class="btn btn-outline-light">Download Free →</a>
+        </div>
+        <div class="training-card training-card-featured fade-up">
+          <div class="training-tag">FAT LOSS</div>
+          <h3>Cut &amp; Shred</h3>
+          <p>Burn fat while preserving hard-earned muscle. This plan combines resistance training with strategic cardio for maximum results.</p>
+          <ul>
+            <li>4–5 sessions per week</li>
+            <li>HIIT &amp; weights hybrid</li>
+            <li>8-week progressive plan</li>
+            <li>Calorie & macro guide</li>
+            <li>Cardio &amp; recovery protocol</li>
+          </ul>
+          <a href="contact.html?plan=cut" class="btn btn-red">Download Free →</a>
+        </div>
+        <div class="training-card fade-up">
+          <div class="training-tag">MUSCLE GAIN</div>
+          <h3>Mass Builder</h3>
+          <p>Pack on lean muscle with a proven hypertrophy programme built on the same principles our competitive members use.</p>
+          <ul>
+            <li>5 sessions per week</li>
+            <li>Push / Pull / Legs split</li>
+            <li>12-week progressive plan</li>
+            <li>Bulk nutrition guide</li>
+            <li>Progressive overload tracker</li>
+          </ul>
+          <a href="contact.html?plan=mass" class="btn btn-outline-light">Download Free →</a>
+        </div>
+        <div class="training-card fade-up">
+          <div class="training-tag">STRENGTH</div>
+          <h3>Power Programme</h3>
+          <p>Get stronger across your main lifts — squat, bench, deadlift. Built around proven powerlifting principles.</p>
+          <ul>
+            <li>4 sessions per week</li>
+            <li>Squat / Bench / Deadlift focus</li>
+            <li>8-week cycle</li>
+            <li>1RM percentage system</li>
+            <li>Accessory work included</li>
+          </ul>
+          <a href="contact.html?plan=power" class="btn btn-outline-light">Download Free →</a>
+        </div>
+        <div class="training-card fade-up">
+          <div class="training-tag">WOMEN'S FITNESS</div>
+          <h3>Tone &amp; Sculpt</h3>
+          <p>Build lean muscle in all the right places. Designed specifically to tone, shape, and build functional strength.</p>
+          <ul>
+            <li>3–4 sessions per week</li>
+            <li>Upper / Lower split</li>
+            <li>6-week programme</li>
+            <li>Glutes &amp; core focus</li>
+            <li>Cardio finishers included</li>
+          </ul>
+          <a href="contact.html?plan=sculpt" class="btn btn-outline-light">Download Free →</a>
+        </div>
+        <div class="training-card fade-up">
+          <div class="training-tag">CARDIO</div>
+          <h3>Endurance &amp; Cardio</h3>
+          <p>Improve your fitness, stamina, and cardiovascular health. Perfect for those training for events or wanting to get fitter.</p>
+          <ul>
+            <li>4 sessions per week</li>
+            <li>Treadmill / rower / bike plans</li>
+            <li>Heart rate zone training</li>
+            <li>6-week build-up</li>
+            <li>Recovery &amp; rest day guidance</li>
+          </ul>
+          <a href="contact.html?plan=cardio" class="btn btn-outline-light">Download Free →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIPS -->
+  <section class="training-tips">
+    <div class="container">
+      <span class="section-eyebrow" style="display:block;text-align:center;">COACH ADVICE</span>
+      <h2 class="text-white text-center">Tips to <span class="text-red">Maximise</span> Every Plan</h2>
+      <div class="tips-grid" style="margin-top:52px;">
+        <div class="tip-card fade-up">
+          <div class="tip-num">01</div>
+          <div>
+            <h3>Follow the Plan — Exactly</h3>
+            <p>Resist the urge to swap exercises or skip sessions. The plan is progressive — every session builds on the last. Trust the process for at least 4 weeks before judging it.</p>
+          </div>
+        </div>
+        <div class="tip-card fade-up">
+          <div class="tip-num">02</div>
+          <div>
+            <h3>Track Everything</h3>
+            <p>Write down every weight, every rep, every set. Progress is invisible without data. Our members who track consistently see 2–3x better results than those who don't.</p>
+          </div>
+        </div>
+        <div class="tip-card fade-up">
+          <div class="tip-num">03</div>
+          <div>
+            <h3>Nutrition is 70%</h3>
+            <p>You cannot out-train a bad diet. Match your nutrition to your goal — surplus for muscle gain, deficit for fat loss. Use the guide included with your plan as a starting point.</p>
+          </div>
+        </div>
+        <div class="tip-card fade-up">
+          <div class="tip-num">04</div>
+          <div>
+            <h3>Sleep Is Training</h3>
+            <p>Muscle is built at rest, not in the gym. Aim for 7–9 hours per night. If you're sleeping less than 6 hours, no programme will get you to your goal faster.</p>
+          </div>
+        </div>
+        <div class="tip-card fade-up">
+          <div class="tip-num">05</div>
+          <div>
+            <h3>Ask for Help</h3>
+            <p>Our coaches are on the floor every session. If you're unsure about a movement or your form, just ask — that's what we're here for. Nobody will judge you for learning.</p>
+          </div>
+        </div>
+        <div class="tip-card fade-up">
+          <div class="tip-num">06</div>
+          <div>
+            <h3>Be Consistent Over Perfect</h3>
+            <p>3 consistent sessions per week beats 5 "perfect" sessions that you burn out on. Build the habit first, then build the intensity. Consistency is the only strategy that works long-term.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PT UPSELL SLIDE-OVER -->
+  <section class="slide-over-section" style="background:var(--white);" id="pt-upsell">
+    <div class="slide-over-inner">
+      <div class="slide-img-panel">
+        <div class="slide-img-bg" style="background-image:url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=900&q=80');"></div>
+      </div>
+      <div class="slide-text-panel" style="background:var(--white);">
+        <span class="section-eyebrow">WANT FASTER RESULTS?</span>
+        <h2 style="color:var(--dark);">Get a <span class="text-red">Personal Trainer</span></h2>
+        <p style="color:#555;">A free plan gets you started. A personal trainer gets you there faster, safer, and with more confidence. Our PTs are available for 1-on-1 sessions included in Pro and Elite memberships.</p>
+        <ul class="check-list">
+          <li style="color:#444;">Accountability every session</li>
+          <li style="color:#444;">Technique corrected in real-time</li>
+          <li style="color:#444;">Programme adapted as you progress</li>
+          <li style="color:#444;">Motivation on the tough days</li>
+        </ul>
+        <div style="display:flex;gap:14px;margin-top:8px;flex-wrap:wrap;">
+          <a href="membership.html" class="btn btn-red">View PT Memberships</a>
+          <a href="contact.html" class="btn btn-outline-dark">Book a Free Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="home-cta-banner">
+    <div class="container">
+      <div class="home-cta-inner">
+        <div>
+          <h2>Download Your Plan &amp; Start Today</h2>
+          <p>Contact us to get your free plan sent straight to your inbox — along with a free trial session to put it into action.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-white btn-lg">Get Free Plan</a>
+          <a href="membership.html" class="btn btn-outline-white btn-lg">Join the Gym</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><span class="logo-muscle">MUSCLE</span><span class="logo-hut">HUT</span></a>
+          <p>Leytonstone's community gym — where every goal is achievable and every member matters.</p>
+          <div class="social-links" style="margin-top:20px;">
+            <a href="https://www.facebook.com/p/Muscle-Hut-Gym-Leytonstone-100083789829434/" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="https://www.instagram.com/musclehutleytonstone/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="https://x.com/muscle_hut" target="_blank" rel="noopener" class="social-btn" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg></a>
+            <a href="https://www.tiktok.com/@musclehutleytonstone_" target="_blank" rel="noopener" class="social-btn" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.73a4.85 4.85 0 0 1-1.01-.04z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Pages</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="membership.html">Membership</a><a href="training-plans.html">Training Plans</a><a href="faqs.html">FAQs</a><a href="contact.html">Contact us</a></div>
+        <div class="footer-col"><h4>Opening Hours</h4><p>Mon – Fri: 6am – Midnight</p><p>Saturday: 8am – 8pm</p><p>Sunday: 8am – 8pm</p></div>
+        <div class="footer-col"><h4>Contact</h4><p>493 High Road Leytonstone<br />London E11 4PG</p><p style="margin-top:10px;"><a href="tel:02085580002" style="color:rgba(255,255,255,0.55);">0208 558 0002</a></p><p><a href="mailto:info@musclehut.uk" style="color:rgba(255,255,255,0.55);">info@musclehut.uk</a></p></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Muscle Hut Gym. All rights reserved.</p>
+        <div style="display:flex;gap:20px;"><a href="terms.html">Terms &amp; Conditions</a><a href="privacy.html">Privacy Policy</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="sticky-cta"><a href="contact.html" class="btn btn-red btn-full">Book Your FREE Trial</a></div>
+  <script src="script.js"></script>
+</body>
+</html>
