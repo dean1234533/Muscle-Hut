@@ -71,6 +71,62 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
+// ---- TESTIMONIALS AUTO-SLIDER (mobile only) ----
+(function () {
+  const slider = document.getElementById('testimonialsSlider');
+  const dots   = document.querySelectorAll('#testimonialsDots .t-dot');
+  if (!slider || !dots.length) return;
+
+  let current = 0;
+  let timer;
+
+  function goTo(idx) {
+    const cards = slider.querySelectorAll('.testimonial-card');
+    if (!cards.length) return;
+    current = (idx + cards.length) % cards.length;
+    slider.scrollTo({ left: cards[current].offsetLeft - slider.offsetLeft, behavior: 'smooth' });
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), 4000);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { goTo(i); startAuto(); });
+  });
+
+  // Only run auto-advance on mobile
+  const mq = window.matchMedia('(max-width: 768px)');
+  if (mq.matches) startAuto();
+  mq.addEventListener('change', e => { e.matches ? startAuto() : clearInterval(timer); });
+
+  // Sync dots when user swipes manually
+  slider.addEventListener('scrollend', () => {
+    const cards = slider.querySelectorAll('.testimonial-card');
+    let closest = 0;
+    let minDist = Infinity;
+    cards.forEach((card, i) => {
+      const dist = Math.abs(card.getBoundingClientRect().left - slider.getBoundingClientRect().left);
+      if (dist < minDist) { minDist = dist; closest = i; }
+    });
+    current = closest;
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+    startAuto();
+  });
+})();
+
+// ---- STICKY CTA: hide when footer is visible ----
+const stickyCta = document.querySelector('.sticky-cta');
+const siteFooter = document.querySelector('.site-footer');
+if (stickyCta && siteFooter) {
+  const footerObs = new IntersectionObserver(([entry]) => {
+    stickyCta.classList.toggle('sticky-cta--hidden', entry.isIntersecting);
+  }, { threshold: 0 });
+  footerObs.observe(siteFooter);
+}
+
 // ---- ACTIVE NAV LINK ----
 // Highlight current page nav link
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';

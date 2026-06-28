@@ -71,12 +71,7 @@
     .slide-text-panel p  { color: #555; margin-bottom: 16px; }
     .slide-text-panel .check-list li { color: #444; }
 
-    /* Membership preview on home */
-    .home-membership { background: #080808; }
-    .home-membership h2 { color: var(--white); }
-    .home-membership .section-sub { color: rgba(255,255,255,0.5); }
-    .home-membership .plans-note { color: rgba(255,255,255,0.38); }
-    .home-membership .plans-note a { color: rgba(255,255,255,0.65); }
+    /* Membership preview on home — dark background styles in style.css */
 
     /* Training Plans preview on home */
     .home-training { background: var(--dark); }
@@ -345,30 +340,37 @@
     <div class="container">
       <span class="section-eyebrow" style="display:block;text-align:center;">MEMBER STORIES</span>
       <h2 class="text-center">Real People. <span class="text-red">Real Results.</span></h2>
-      <div class="testimonials-grid" style="margin-top:52px;">
-        <div class="testimonial-card fade-up">
-          <div class="stars">★★★★★</div>
-          <p>"I lost 18kg in 5 months. The coaches at Muscle Hut kept me accountable every single week. Best decision I ever made."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">MK</div>
-            <div><strong>Marcus K.</strong><span>Member since 2022</span></div>
+      <div class="testimonials-slider-wrap" style="margin-top:52px;">
+        <div class="testimonials-grid" id="testimonialsSlider">
+          <div class="testimonial-card fade-up">
+            <div class="stars">★★★★★</div>
+            <p>"I lost 18kg in 5 months. The coaches at Muscle Hut kept me accountable every single week. Best decision I ever made."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">MK</div>
+              <div><strong>Marcus K.</strong><span>Member since 2022</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card fade-up">
+            <div class="stars">★★★★★</div>
+            <p>"Finally a gym where the staff actually know your name and push you. The atmosphere is incredible — everyone is so supportive."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">SL</div>
+              <div><strong>Sarah L.</strong><span>Member since 2021</span></div>
+            </div>
+          </div>
+          <div class="testimonial-card fade-up">
+            <div class="stars">★★★★★</div>
+            <p>"I went from never lifting to competing in a bodybuilding show in 18 months. The coaches here are world class."</p>
+            <div class="testimonial-author">
+              <div class="author-avatar">JB</div>
+              <div><strong>James B.</strong><span>Member since 2020</span></div>
+            </div>
           </div>
         </div>
-        <div class="testimonial-card fade-up">
-          <div class="stars">★★★★★</div>
-          <p>"Finally a gym where the staff actually know your name and push you. The atmosphere is incredible — everyone is so supportive."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">SL</div>
-            <div><strong>Sarah L.</strong><span>Member since 2021</span></div>
-          </div>
-        </div>
-        <div class="testimonial-card fade-up">
-          <div class="stars">★★★★★</div>
-          <p>"I went from never lifting to competing in a bodybuilding show in 18 months. The coaches here are world class."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">JB</div>
-            <div><strong>James B.</strong><span>Member since 2020</span></div>
-          </div>
+        <div class="testimonials-dots" id="testimonialsDots">
+          <button class="t-dot active" aria-label="Review 1"></button>
+          <button class="t-dot" aria-label="Review 2"></button>
+          <button class="t-dot" aria-label="Review 3"></button>
         </div>
       </div>
     </div>
